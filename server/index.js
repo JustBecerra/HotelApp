@@ -1,9 +1,10 @@
-const express = require("express")
-const app = express()
-const mongoose = require("mongoose")
+const dotenv = require('dotenv');
+const app = require('./src/app');
 
-mongoose.connect("mongodb+srv://JustoBecerra:springfield3006@location.t03oh.mongodb.net/HotelDB?retryWrites=true&w=majority")
+require('./src/mongoDB');
 
-app.listen(3001, () => {
-    console.log("arranco")
+dotenv.config();
+
+app.listen(process.env.PORT || 3001, () => {
+    console.log(`Server running in port ${process.env.PORT}`)
 })
