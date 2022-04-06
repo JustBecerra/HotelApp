@@ -1,0 +1,19 @@
+.backgroundLobby{
+    background-image: url('../../../imgs/HotelLobby.jpg');
+    background-repeat: no-repeat;
+    background-size: 1200px 600px;
+    opacity:0.8;
+    height:600px;
+    width:1200px;
+    margin-left: 5%;
+}
+
+.imageH1{
+    color:whitesmoke;
+    /* align-self: flex-start; */
+    width:fit-content;
+    position:relative;
+    left:5%;
+    top:10%;
+    border-bottom: 2px solid white;
+}

@@ -1,0 +1,14 @@
+.navBackground{
+    background-color: rgba(19, 18, 18, 0.863);
+    /* border:2px solid black; */
+}
+
+.headerStyle{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-self:flex-start;
+    padding-left: 40px;
+    padding-top:10px;
+}

@@ -1,9 +1,10 @@
 import ButtonNavs from "./NavButtons/ButtonNavs"
+import './NavBar.css'
 
 export default function NavBar(){
     return(
-        <div>
-            <header>need a hotel? we got you.</header>
+        <div className="navBackground">
+            <header className="headerStyle">Hotel Tracker</header>
             <ButtonNavs />
         </div>
     )

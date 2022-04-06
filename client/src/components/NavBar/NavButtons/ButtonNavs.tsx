@@ -1,7 +1,11 @@
+import './ButtonNavs.css';
+
 export default function ButtonNavs(){
     return(
-        <div>
-            
+        <div className='buttonContainer'>
+            <button>Home</button>
+            <button>Gallery</button>
+            <button>About</button>
         </div>
     )
 }

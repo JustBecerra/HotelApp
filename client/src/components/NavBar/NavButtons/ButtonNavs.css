@@ -1,0 +1,8 @@
+.buttonContainer{
+    /* margin:auto; */
+    width:fit-content;
+    /* align-self: center; */
+    position:relative;
+    left:42%;
+    bottom:20px;
+}
