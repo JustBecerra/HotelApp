@@ -1,8 +1,8 @@
 .backgroundLobby{
-    background-image: url('../../../imgs/HotelLobby.jpg');
+    background-image: url('../../../imgs/DarkHotelLobby.jpg');
     background-repeat: no-repeat;
     background-size: 1200px 600px;
-    opacity:0.8;
+    /* opacity:0.8; */
     height:600px;
     width:1200px;
     margin-left: 5%;
@@ -14,6 +14,31 @@
     width:fit-content;
     position:relative;
     left:5%;
-    top:10%;
+    top:15%;
     border-bottom: 2px solid white;
+}
+
+.imageP{
+    color:whitesmoke;
+    /* align-self: flex-start; */
+    width:30%;
+    position:relative;
+    left:5%;
+    top:20%;
+}
+
+.learnButton{
+    color: white;
+    font-weight: bold;
+    width:12%;
+    height:12%;
+    border-radius: 30%;
+    border-color: white;
+    border-style: solid;
+    outline:0;
+    background-color: transparent;
+    position:relative;
+    right:32%;
+    top:40%;
+    cursor:pointer;
 }

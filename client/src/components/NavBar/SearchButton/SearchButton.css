@@ -1,0 +1,14 @@
+.Button{
+  width:12%;
+  height:7%;
+  color:white;
+  background-color: #8A6814;
+  border-top-right-radius: 40%;
+  border-bottom-right-radius: 40%;
+  border-top-left-radius: 40%;
+  border-bottom-left-radius: 40%;
+  border-style: solid;
+  position:absolute;
+  right:12%;
+  top:2%;
+}
