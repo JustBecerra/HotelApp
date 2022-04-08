@@ -1,0 +1,75 @@
+.NearButton{
+  width:8%;
+  height:7%;
+  color:white;
+  cursor: pointer;
+  background-color: #bea163;
+  border-top-right-radius: 40%;
+  border-bottom-right-radius: 40%;
+  border-top-left-radius: 40%;
+  border-bottom-left-radius: 40%;
+  border:transparent;
+  position:absolute;
+  right:22%;
+  top:2%;
+}
+
+.FindSearchBar{
+  width:12%;
+  height:3%;
+  border:transparent;
+  border-bottom: 1px solid white;
+  color:white;
+  position:absolute;
+  background-color: transparent;
+  right:9%;
+  top:4%;
+}
+
+.submitButton{
+  width:5%;
+  height:4%;
+  color:white;
+  cursor: pointer;
+  background-color: #bea163;
+  border-top-right-radius: 20%;
+  border-bottom-right-radius: 20%;
+  border-top-left-radius: 20%;
+  border-bottom-left-radius: 20%;
+  border:transparent;
+  position:absolute;
+  right:2%;
+  top:4%;
+}
+
+.FindSearchBar::placeholder{
+  color:whitesmoke;
+}
+
+.modalBG{
+  position: absolute;
+  top: 100px;
+  /* left: 40px; */
+  right: 430px;
+  /* bottom: 20px; */
+  width: 30%;
+  height: 60%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  align-self: center;
+  border: 2px groove black;
+  background-color: #2b6777;
+}
+
+.OverlayModal{
+  border: 2px groove black;
+  border-radius: 15%;
+  width:75%;
+  height:75%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+}

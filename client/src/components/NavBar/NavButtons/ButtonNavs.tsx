@@ -3,9 +3,9 @@ import './ButtonNavs.css';
 export default function ButtonNavs(){
     return(
         <div className='buttonContainer'>
-            <button>Home</button>
-            <button>Gallery</button>
-            <button>About</button>
+            <button className='individualButton'>Home</button>
+            <button className='individualButton'>Gallery</button>
+            <button className='individualButton'>About</button>
         </div>
     )
 }

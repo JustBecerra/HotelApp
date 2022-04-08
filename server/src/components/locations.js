@@ -29,7 +29,7 @@ RouterLocations.get('/search', async (req, res) => {
     const options = {
       method: 'GET',
       url: 'https://hotels4.p.rapidapi.com/locations/v2/search',
-      params: {query: 'new york', locale: 'en_US', currency: 'USD'},
+      params: {query: req.params.query},
       headers: {
         'X-RapidAPI-Host': process.env.API_HOST,
         'X-RapidAPI-Key': process.env.API_KEY

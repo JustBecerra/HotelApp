@@ -1,5 +1,5 @@
 import ButtonNavs from "./NavButtons/ButtonNavs"
-import SearchButton from "./SearchButton/SearchButton"
+import SearchBar from "./SearchBar/SearchBar"
 import './NavBar.css'
 
 export default function NavBar(){
@@ -7,7 +7,7 @@ export default function NavBar(){
         <div className="navBackground">
             <header className="headerStyle">Hotel Tracker</header>
             <ButtonNavs />
-            <SearchButton />
+            <SearchBar />
         </div>
     )
 }
