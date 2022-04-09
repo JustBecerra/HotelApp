@@ -15,7 +15,7 @@ export default function SearchButton(){
     }
     
     function handleChange(e: React.ChangeEvent<HTMLInputElement>){
-        setSearch(e.target.value)
+      setSearch(e.target.value)
     }
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>){
