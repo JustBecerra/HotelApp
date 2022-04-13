@@ -1,12 +1,19 @@
-import { locations } from '../types/Types';
+import { locations, properties } from '../types/Types';
 import {
     GET_LOCATIONS,
+    GET_PROPERTIES,
 } from '../types/actionTypes';
 
 import { FilterActionTypes } from '../types/actionTypes';
 
-const initialState = {
+export interface typeState{
+    locations: Array<locations>
+    properties: Array<properties>
+}
+
+const initialState: typeState = {
     locations:[],
+    properties:[]
 }
 
 export default function rootReducer(state = initialState, action:FilterActionTypes){

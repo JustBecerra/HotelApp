@@ -24,7 +24,7 @@ RouterLocations.get('/', (req, res) => {
     }
 })
 
-RouterLocations.get('/search', async (req, res) => {
+RouterLocations.get('/search/:query', async (req, res) => {
   try{
     const options = {
       method: 'GET',

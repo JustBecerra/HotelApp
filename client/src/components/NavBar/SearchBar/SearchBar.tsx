@@ -1,11 +1,17 @@
 import './SearchBar.css';
 import Modal from 'react-modal';
 import React from 'react';
+import { getLocations } from '../../redux/Actions/getLocations';
+import { info } from 'console';
+import { useDispatch, useSelector } from 'react-redux';
+import { typeState } from '../../redux/reducer';
 
 export default function SearchButton(){
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [search, setSearch] = React.useState(''); 
-
+    const dispatch = useDispatch();
+    const locations = useSelector((state: typeState) => state.locations);
+    console.log(locations)
     function openModal() {
       setIsOpen(true);
     }
@@ -18,16 +24,20 @@ export default function SearchButton(){
       setSearch(e.target.value)
     }
 
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>){
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>){
       e.preventDefault();
-      if(search){
-        
-        openModal();
-
-      }    
+      try{
+        if(search){
+          dispatch(await getLocations(search));
+          openModal();
+          setSearch('')
+        } 
+      }catch(err){
+        console.log(err)
+      }
+         
     }
 
-    console.log(search)
     return(
         <>
             {/* <button onClick={openModal} className='NearButton'>
@@ -52,6 +62,9 @@ export default function SearchButton(){
             >
               <div>
                 <button onClick={closeModal}>X</button>
+                {/* {locations.map((l:any) => {
+                  return <p>{l.term}</p>
+                })} */}
                 
               </div>
             </Modal>
