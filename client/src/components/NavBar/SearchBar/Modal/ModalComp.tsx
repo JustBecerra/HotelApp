@@ -5,19 +5,33 @@ import { getProperties } from '../../../redux/Actions/getProperties';
 import { useDispatch } from 'react-redux';
 
 export interface ListType {
+  destinationId: string;
   checkIn: string,
   checkOut: string,
   firstRoom: number,
-  secondRoom: number,
-  thirdRoom: number,
+  secondRoom?: number,
+  thirdRoom?: number,
+  firstChildren?: string,
+  secondChildren?: string,
+  thirdChildren?: string,
+  rating?: string,
+  minPrice?: number,
+  maxPrice?: number,
 }
 
 const listInfo = {
+  destinationId: '',
   checkIn: '',
   checkOut: '',
   firstRoom: 0,
   secondRoom: 0,
   thirdRoom: 0,
+  firstChildren: '',
+  secondChildren: '',
+  thirdChildren: '',
+  rating: '',
+  minPrice: 0,
+  maxPrice: 0,
 }
 
 export default function ModalComp(props:{searchV: string, modalIsOpen: boolean, closeModal: () => void, setSearch: (value: string) => void}) {
@@ -42,8 +56,6 @@ export default function ModalComp(props:{searchV: string, modalIsOpen: boolean, 
             [e.target.name]: e.target.value
         })
     }
-      
-    
 
     return(
         <>
