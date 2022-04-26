@@ -1,7 +1,6 @@
 import './SearchBar.css';
 import React from 'react';
 import ModalComp from './Modal/ModalComp';
-import { typeState } from '../../redux/reducer';
 
 export default function SearchButton(){
     const [search, setSearch] = React.useState('');

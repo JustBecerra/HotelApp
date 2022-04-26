@@ -18,10 +18,10 @@ const initialState: typeState = {
 
 export default function rootReducer(state = initialState, action:FilterActionTypes){
     switch (action.type) {
-        case GET_LOCATIONS:
+        case GET_PROPERTIES:
             return {
                 ...state,
-                locations: action.payload
+                properties: action.payload
             }
         default:
             return state
