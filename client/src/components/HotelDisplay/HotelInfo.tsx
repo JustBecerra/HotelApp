@@ -6,12 +6,12 @@ import './HotelInfo.css'
 
 export default function HotelInfo(){
     const hotels = useSelector((state: typeState) => state.properties)
-    // console.log(hotels)
+
     return(
-        <div className="HotelsFeed">
-          {hotels.map((h: properties) => {return (<Hotel 
-          key={h.id} id={h.id} name={h.name} address={h.address} locality={h.locality} 
-          starRating={h.starRating} guestRating={h.guestRating} rateplan={h.rateplan}/>)})}
-        </div>
+      <div className="HotelsFeed">
+        {hotels.map((h: properties) => {return (<Hotel 
+        key={h.id} id={h.id} name={h.name} address={h.address} neighbourhood={h.neighbourhood}
+        starRating={h.starRating} guestReviews={h.guestReviews} ratePlan={h.ratePlan} landmarks={h.landmarks}/>)})}
+      </div>
     )
 }

@@ -40,6 +40,7 @@ export default function ModalComp(props:{searchV: string, modalIsOpen: boolean, 
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>){
         e.preventDefault();
+        props.closeModal();
         try{
           if(props.searchV){
             dispatch(await getProperties(props.searchV, list));
@@ -79,7 +80,7 @@ export default function ModalComp(props:{searchV: string, modalIsOpen: boolean, 
               <input type='text' onChange={(e) => handleChange(e)} name='rating' className='inputModal' placeholder='rating'/>
               <input type='number' onChange={(e) => handleChange(e)} name='minPrice' className='inputModal' placeholder='min price'/>
               <input type='number' onChange={(e) => handleChange(e)} name='maxPrice' className='inputModal' placeholder='max price'/>
-              <button type='submit' className='closeButton'>Search</button>
+              <button type='submit' className='closeButton' >Search</button>
             </form>
           </Modal>
         </>
