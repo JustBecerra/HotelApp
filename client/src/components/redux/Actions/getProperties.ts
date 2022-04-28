@@ -15,7 +15,7 @@ export async function getProperties(searchV: string, list: ListType) {
     params: {
       destinationId: Number.parseInt(destinationArray[0]),
       pageNumber: 1,
-      pageSize: 25,
+      pageSize: 10,
       checkIn: list.checkIn,
       checkOut: list.checkOut,
       adults1: list.firstRoom,
@@ -33,3 +33,4 @@ export async function getProperties(searchV: string, list: ListType) {
     console.log(err)
   }
 }
+
