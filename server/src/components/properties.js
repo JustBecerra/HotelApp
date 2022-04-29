@@ -39,12 +39,12 @@ RouterProperties.get('/details', (req, res) => {
             method: 'GET',
             url: 'https://hotels4.p.rapidapi.com/properties/get-details',
             params: {
-              id: '424023',
-              checkIn: '2020-01-08',
-              checkOut: '2020-01-15',
-              adults1: '1',
-              currency: 'USD',
-              locale: 'en_US'
+              id: req.params.id,
+            //   checkIn: req.params.checkIn,
+            //   checkOut: req.params.checkOut,
+            //   adults1: req.params.adults1,
+            //   currency: req.params.currency,
+            //   locale: req.params.locale
             },
             headers: {
               'X-RapidAPI-Host': process.env.API_HOST,

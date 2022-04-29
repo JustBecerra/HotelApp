@@ -1,10 +1,13 @@
 import { properties } from "../../redux/types/Types"
+import { getDetails } from "../../redux/Actions/getDetails";
+import { useDispatch, useSelector } from "react-redux";
 import React from "react";
 import Modal from "react-modal"
 import './Hotel.css'
 
 export default function Hotel(props:properties){
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const dispatch = useDispatch()
 
     function openModal() {
         setIsOpen(true);
@@ -12,6 +15,11 @@ export default function Hotel(props:properties){
         
     function closeModal() {
         setIsOpen(false);
+    }
+
+    function retrieveDetails(){
+        dispatch(getDetails(props.id.toString()))
+        openModal()
     }
 
     return(

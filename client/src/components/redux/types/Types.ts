@@ -29,3 +29,13 @@ export interface properties{
         }
     ],
 }
+
+export interface details{
+    overviewSections:[
+        {
+        title: string,
+        type: string,
+        content:string[]
+        }
+    ]
+}

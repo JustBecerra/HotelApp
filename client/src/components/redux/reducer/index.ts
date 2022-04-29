@@ -1,6 +1,6 @@
-import { locations, properties } from '../types/Types';
+import { locations, properties, details } from '../types/Types';
 import {
-    GET_LOCATIONS,
+    GET_DETAILS,
     GET_PROPERTIES,
 } from '../types/actionTypes';
 
@@ -9,11 +9,13 @@ import { FilterActionTypes } from '../types/actionTypes';
 export interface typeState{
     locations: Array<locations>
     properties: Array<properties>
+    propDetail: Array<details>
 }
 
 const initialState: typeState = {
     locations:[],
-    properties:[]
+    properties:[],
+    propDetail:[],
 }
 
 export default function rootReducer(state = initialState, action:FilterActionTypes){
@@ -22,6 +24,11 @@ export default function rootReducer(state = initialState, action:FilterActionTyp
             return {
                 ...state,
                 properties: action.payload
+            }
+        case GET_DETAILS:
+            return{
+                ...state,
+                propDetail: action.payload
             }
         default:
             return state
