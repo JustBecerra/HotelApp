@@ -1,5 +1,6 @@
 import { properties } from "../../redux/types/Types"
 import { getDetails } from "../../redux/Actions/getDetails";
+import { typeState } from "../../redux/reducer";
 import { useDispatch, useSelector } from "react-redux";
 import React from "react";
 import Modal from "react-modal"
@@ -8,7 +9,8 @@ import './Hotel.css'
 export default function Hotel(props:properties){
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const dispatch = useDispatch()
-
+    const details = useSelector((state: typeState) => state.propDetail)
+    console.log(details)
     function openModal() {
         setIsOpen(true);
     }
@@ -17,14 +19,14 @@ export default function Hotel(props:properties){
         setIsOpen(false);
     }
 
-    function retrieveDetails(){
-        dispatch(getDetails(props.id.toString()))
+    async function retrieveDetails(){
+        dispatch(await getDetails(props.id))
         openModal()
     }
 
     return(
         <>
-            <div className="Hcontainer" onClick={openModal}>
+            <div className="Hcontainer" onClick={retrieveDetails}>
                 <h5 className="Hinfo">{props.name}</h5>
                 <h5 className="Hinfo">{props.starRating} Star Hotel</h5>
                 <h5 className="Hinfo">Neighbourhood: {props.neighbourhood}</h5>
@@ -38,7 +40,7 @@ export default function Hotel(props:properties){
                 ariaHideApp={false}
                 className='modal-content'
             >
-            
+                <h5>{props.name}</h5>
                 <h5 className="Hinfo">Address: {props.address.streetAddress}</h5>
                  <div className="Hinfo">
                     Landmarks nearby:

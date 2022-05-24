@@ -3,8 +3,8 @@
     justify-content:center;
     flex-direction: column;
     /* flex-wrap: wrap; */
-    padding:20px;
-    margin:40px;
-    overflow: auto;
+    padding-top:50px;
+    margin-top:50px;
+    overflow: scroll;
     height:600px;
 }

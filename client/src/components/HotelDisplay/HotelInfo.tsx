@@ -6,7 +6,7 @@ import './HotelInfo.css'
 
 export default function HotelInfo(){
     const hotels = useSelector((state: typeState) => state.properties)
-
+    
     return(
       <div className="HotelsFeed">
         {hotels.map((h: properties) => {return (<Hotel 
