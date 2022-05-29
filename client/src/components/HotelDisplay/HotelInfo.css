@@ -8,3 +8,15 @@
     overflow: scroll;
     height:600px;
 }
+
+.loading{
+    position:absolute;
+    right:45%;
+    top:25%
+}
+
+.gif{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

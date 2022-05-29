@@ -3,35 +3,28 @@ import React from 'react';
 import Modal from 'react-modal';
 import { getProperties } from '../../../redux/Actions/getProperties';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export interface ListType {
   destinationId: string;
   checkIn: string,
   checkOut: string,
-  firstRoom: number,
-  secondRoom?: number,
-  thirdRoom?: number,
-  firstChildren?: string,
-  secondChildren?: string,
-  thirdChildren?: string,
+  sort_order: string[],
+  children_ages?: string,
   rating?: string,
-  minPrice?: number,
-  maxPrice?: number,
+  price_min?: number,
+  price_max?: number,
 }
 
 const listInfo = {
   destinationId: '',
   checkIn: '',
   checkOut: '',
-  firstRoom: 0,
-  secondRoom: 0,
-  thirdRoom: 0,
-  firstChildren: '',
-  secondChildren: '',
-  thirdChildren: '',
+  sort_order: [],
+  children_ages: '',
   rating: '',
-  minPrice: 0,
-  maxPrice: 0,
+  price_min: 0,
+  price_max: 0,
 }
 
 export default function ModalComp(props:{searchV: string, modalIsOpen: boolean, closeModal: () => void, setSearch: (value: string) => void}) {
@@ -58,6 +51,10 @@ export default function ModalComp(props:{searchV: string, modalIsOpen: boolean, 
         })
     }
 
+    function handleSelect(e: React.ChangeEvent<HTMLSelectElement>){
+
+    }
+
     return(
         <>
           <Modal
@@ -71,16 +68,22 @@ export default function ModalComp(props:{searchV: string, modalIsOpen: boolean, 
               <input type='date' onChange={(e) => handleChange(e)} name='checkIn' className='inputModal' placeholder='check-in date DD-MM-YY'/>
               <label className='checkout'>Check-out date</label>
               <input type='date' onChange={(e) => handleChange(e)} name='checkOut' className='inputModal' placeholder='check-out date DD-MM-YY'/>
-              <input type='number' onChange={(e) => handleChange(e)} name='firstRoom' className='inputModal' placeholder='number of guests in first room'/>
-              <input type='number' onChange={(e) => handleChange(e)} name='secondRoom' className='inputModal' placeholder='number of guests in second room'/>
-              <input type='number' onChange={(e) => handleChange(e)} name='thirdRoom' className='inputModal' placeholder='number of guests in third room'/>
-              <input type='text' onChange={(e) => handleChange(e)} name='firstChildren' className='inputModal' placeholder='age of children in first room'/>
-              <input type='text' onChange={(e) => handleChange(e)} name='secondChildren' className='inputModal' placeholder='age of children in second room'/>
-              <input type='text' onChange={(e) => handleChange(e)} name='thirdChildren' className='inputModal' placeholder='age of children in third room'/>
-              <input type='text' onChange={(e) => handleChange(e)} name='rating' className='inputModal' placeholder='rating'/>
-              <input type='number' onChange={(e) => handleChange(e)} name='minPrice' className='inputModal' placeholder='min price'/>
-              <input type='number' onChange={(e) => handleChange(e)} name='maxPrice' className='inputModal' placeholder='max price'/>
-              <button type='submit' className='closeButton' >Search</button>
+              <input type='text' onChange={e => handleChange(e)} name='children ages' className='inputModal' placeholder='age of children(optional)'/>
+              <select className='filter' onChange={e => handleSelect(e)}>
+                <option value='PRICE'>Price</option>
+                <option value='PRICE_HIGHEST_PRICE'>Highest price</option>
+                <option value='GUEST_RATING'>Guest rating</option>
+                <option value='DISTANCE_FROM_LANDMARK'>Closest to landmarks</option>
+                <option value='BEST_SELLER'>Most popular</option>
+                <option value='STAR_RATING_LOWEST_FIRST'>Lowest star rating</option>
+                <option value='STAR_RATING_HIGHEST_FIRST'>Highest star rating</option>
+              </select>
+              <input type='text' onChange={(e) => handleChange(e)} name='rating' className='inputModal' placeholder='rating(optional)'/>
+              <input type='number' onChange={(e) => handleChange(e)} name='minPrice' className='inputModal' placeholder='min price(optional)'/>
+              <input type='number' onChange={(e) => handleChange(e)} name='maxPrice' className='inputModal' placeholder='max price(optional)'/>
+              <Link to={'/hotels'}>
+                <button type='submit' className='closeButton' >Search</button>
+              </Link>
             </form>
           </Modal>
         </>
